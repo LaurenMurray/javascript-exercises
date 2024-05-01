@@ -1,7 +1,8 @@
-const sumAll = function (num1, num2) {
-    if (num1 < 0 || num2 < 0 || typeof(num1) != 'number' || typeof(num2) != 'number') return 'ERROR';
+const sumAll = function (min, max) {
+    if (min < 0 || max < 0 || !Number.isInteger(min) || !Number.isInteger(max)) return 'ERROR';
+    if (min > max) [min, max] = [max, min];
     let finalSum = 0;
-    for (i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+    for (i = min; i <= max; i++) {
         finalSum +=i;
     }
     console.log(finalSum);
